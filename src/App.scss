@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  padding-top: 16px;
+  background-color: #333;
+
+  .app_form {
+    font-weight: 800;
+    color: rgb(213, 117, 27);
+
+    .app_form_input {
+      margin-right: 16px;
+    }
+
+  }
+
+  .app_showInfo {
+    display: flex;
+
+    .app_text {
+      text-align: left;
+      margin-left: 100px;
+      margin-top: 32px;
+      margin-bottom: 100px;
+      color: aqua;
+    }
+
+    .app_img {
+      border-radius: 50%;
+    }
+  }
+
+}
