@@ -2,6 +2,7 @@
   text-align: center;
   padding-top: 16px;
   background-color: #333;
+  height: 100vh;
 
   .app_form {
     font-weight: 800;
@@ -15,17 +16,21 @@
 
   .app_showInfo {
     display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
 
     .app_text {
       text-align: left;
       margin-left: 100px;
-      margin-top: 32px;
       margin-bottom: 100px;
       color: aqua;
+      align-self: center;
     }
 
     .app_img {
-      border-radius: 50%;
+      img {
+        border-radius: 50%;
+      }
     }
   }
 

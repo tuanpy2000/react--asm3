@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import axios from 'axios'
+import InputForm from './components';
+import debounce from 'lodash.debounce';
 
 function App() {
   const [input, setInput] = useState('')
   const [dataUsers, setDataUsers] = useState([])
   const [show, setShow] = useState(false)
 
-  const handleInputChange = (e) => {
+  const handleInputChange = debounce((e) => {
     setInput(e.target.value);
     if (e.target.value !== '')
       setShow(true)
     else
       setShow(false)
-  }
-
-
+  }, 500);
 
   const getUserData = (inputText) => {
     const dataReceive = axios.get(`https://api.github.com/users/${inputText}`)
@@ -38,11 +38,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className='app_form'>
-        <label className='app_form_input'>Input Name</label>
-        <input onChange={handleInputChange} value={input}>
-        </input>
-      </div>
+      <InputForm
+        handleInputChange={handleInputChange}
+      />
       {show &&
         <div className='app_showInfo'>
           <div className='app_text'>
